@@ -1,6 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import github from './assets/GitHub.png'
+import linkedIn from './assets/LinkedIn.png'
+import bcrypt from './assets/skills/bcrypt-logo.jpg'
+import bootstrap from './assets/skills/bootstrap.png'
+import css from './assets/skills/css-3.png'
+import html from './assets/skills/html-5.png'
+import express from './assets/skills/express.png'
+import javascript from './assets/skills/javascript.png'
+import node from './assets/skills/nodejs.png'
+import redux from './assets/skills/logo-redux.png'
+import postgresql from './assets/skills/postgresql.png'
+import react from './assets/skills/react.png'
+import sass from './assets/skills/sass.png'
 
 function App() {
   return (
@@ -10,25 +22,39 @@ function App() {
         <h2 className="hero__title">About me</h2>
         <div className="about_section">
         <p className="about_me">Name: Chris</p>
-        <p className="about_me2">Profession: <b>Full Stack Developer</b></p>
+        <p className="about_me2">Profession: <span><b>Full Stack Developer</b></span></p>
         <p className="about_me3">Hobbies: Coding, Traveling and Coding while Traveling</p>
         </div>
       </section>
       <section className="hero" id="section-1">
         <figure></figure>
-        <h2 className="hero__title_left">Portfolio</h2>
-      {/* portfolio work here */}
+        <h2 className="hero__title_left">Skills</h2>
+        <img className="skill-icons html" src={html} alt=""/>
+        <img className="skill-icons css" src={css} alt=""/>
+        <img className="skill-icons sass"src={sass} alt=""/>
+        <img className="skill-icons bootstrap" src={bootstrap} alt=""/>
+        <img className="skill-icons javascript" src={javascript} alt=""/>
+        <img className="skill-icons react" src={react} alt=""/>
+        <img className="skill-icons redux" src={redux} alt=""/>
+        <img className="skill-icons node" src={node} alt=""/>
+        <img className="skill-icons express" src={express} alt=""/>
+        <img className="skill-icons bcrypt" src={bcrypt} alt=""/>
+        <img className="skill-icons postgresql" src={postgresql} alt=""/>
       </section>
       <section className="hero" id="section-2">
         <figure></figure>
-        <h2 className="hero__title_contact">Contact Me</h2>
-        <h6 className="email">cabiediger@gmail.com</h6>
-        <h6 className="phone">410-508-4105</h6>
+        <h2 className="hero__title">Portfolio</h2>
+        {/* portfolio work here */}
       </section>
-      {/* <section className="hero" id="section-3">
+      <section className="hero" id="section-3">
         <figure></figure>
-        <h2 className="hero__title">Each one of them pretty</h2>
+        <h2 className="hero__title_left">Contact Me</h2>
+        <h6 className="email"><a href="mailto:cabiediger@gmail.com">cabiediger@gmail.com</a></h6>
+        <h6 className="phone">410-508-4105</h6>
+        <a href="https://github.com/cbied" target="_blank"><img className="github" src={github} alt="github"/></a>
+        <a href="https://www.linkedin.com/in/biedswebdev/" target="_blank"><img className="linkedIn" src={linkedIn} alt="github"/></a>
       </section>
+      {/* 
       <section className="content">
         <article className="content__inner">
           <h1 className="content__title">Some Happy Little Text</h1>
