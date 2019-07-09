@@ -41,7 +41,7 @@ figure {
 .hero {
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: 120vh;
   -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
           clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
@@ -257,13 +257,14 @@ figure {
   background:white;
 }
 
-.card2 {
+.modal2 {
   position: fixed;
-  width: 17rem;
+  background-size: cover;
+  width: 13rem;
   height: 23rem;
-  top: 7rem;
-  right: 35rem;
-  background:white;
+  top: 9rem;
+  right: 55rem;
+  background-image: url('./assets/jnjLogin.png')
 }
 
 .card Img {
@@ -272,20 +273,40 @@ figure {
   position: absolute;
 }
 
+.technologies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #github, #github2 {
   width: 5rem;
   height: 5rem;
   margin-left:1rem;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
+
+}
+
+ .siteLinks {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.siteLinks:hover {
+  color: black;
+  text-decoration: none;
 }
 
 #github {
-  margin: 10.5rem 0 0 .5rem;
+  margin: .5rem 0 0 .5rem;
 }
 
 #github2 {
-  margin: 10.5rem 0 0 9rem;
+  margin: .5rem 0 0 7rem;
+  height: 6.5rem;
+  width: 6.5rem;
 }
 
 

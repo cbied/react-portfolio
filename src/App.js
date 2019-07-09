@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import github from './assets/GitHub.png'
 import githubClear from './assets/github-clear.png'
@@ -14,11 +14,14 @@ import redux from './assets/skills/logo-redux.png'
 import postgresql from './assets/skills/postgresql.png'
 import react from './assets/skills/react.png'
 import sass from './assets/skills/sass.png'
-import jnjLogin from './assets/jnjLogin.png'
-import { Button, Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle } from 'reactstrap'
+import eye from './assets/eye.png'
+import { Button, Card, CardBody, Collapse, Modal, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap'
 
 function App() {
+
+  const [modal, toggle] = useState(false)
+  const [collapse, toggleCollapse] = useState(false)
+
   return (
     <div>
       <section className='hero' id='section-0'>
@@ -49,27 +52,29 @@ function App() {
       <section className='hero' id='section-2'>
         <figure></figure>
         <h2 className='hero__title' id='portfolio'>Portfolio</h2>
-        {/* add slider to picture of projects reference old portfolio */}
-        <Card className='card'>
-          <CardImg top width='100%' src={jnjLogin} alt='Card image cap' />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-            <a href='https://github.com/cbied' target='_blank'><img id="github" src={githubClear} alt='github'/></a>
-            <a href='https://github.com/cbied' target='_blank'><img id="github2" src={githubClear} alt='github'/></a>
-          </CardBody>
-        </Card>
-        <Card className='card2'>
-          <CardImg top width='100%' src={jnjLogin} alt='Card image cap' />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text</CardText>
-            <a href='https://github.com/cbied' target='_blank'><img id="github" src={githubClear} alt='github'/></a>
-            <a href='https://github.com/cbied' target='_blank'><img id="github2" src={githubClear} alt='github'/></a>
-          </CardBody>
-        </Card>
+        <Button className='modal2' onClick={toggle}></Button>
+        <Modal isOpen={modal} toggle={toggle} className='modal-lg'>
+          <ModalHeader toggle={(bool) => toggle(!bool)}>Jnj Equine Message</ModalHeader>
+          <ModalBody>
+          <h4>Description</h4>
+          <p>JnJ Equine massage is a web app I made for an equine massage company.  This was a test of everything I knew at the time, as well as new technologies I learned on the spot such as Strip and SSH</p>
+          <div className='technologies'>
+          <h5>Technologies Used</h5>
+          <p>React || SASS || ReactStrap || Redux</p>
+          <p>Node || Express || Bcrypt || PostgreSQL </p>
+          <p>Stripe || SSH || Postman </p>
+          </div>
+          <a href='https://github.com/cbied' target='_blank' className="siteLinks"><img id="github" src={githubClear} alt='github'/> Github</a>
+          <a href='https://www.jnjequinemassage.com' target='_blank' className="siteLinks"><img id="github2" src={eye} alt='github'/> Site</a>
+
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={(bool) => toggle(!bool)}>Done</Button>
+          </ModalFooter>
+        </Modal>
+
+      {/* add drop down to show pics of project */}
+        
       </section>
       <section className='hero' id='section-3'>
         <figure></figure>
