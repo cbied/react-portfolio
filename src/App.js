@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import github from './assets/GitHub.png'
+import githubClear from './assets/github-clear.png'
 import linkedIn from './assets/LinkedIn.png'
 import bcrypt from './assets/skills/bcrypt-logo.jpg'
 import bootstrap from './assets/skills/bootstrap.png'
@@ -13,52 +14,76 @@ import redux from './assets/skills/logo-redux.png'
 import postgresql from './assets/skills/postgresql.png'
 import react from './assets/skills/react.png'
 import sass from './assets/skills/sass.png'
+import jnjLogin from './assets/jnjLogin.png'
+import { Button, Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle } from 'reactstrap'
 
 function App() {
   return (
     <div>
-      <section className="hero" id="section-0">
+      <section className='hero' id='section-0'>
         <figure></figure>
-        <h2 className="hero__title">About me</h2>
-        <div className="about_section">
-        <p className="about_me">Name: Chris</p>
-        <p className="about_me2">Profession: <span><b>Full Stack Developer</b></span></p>
-        <p className="about_me3">Hobbies: Coding, Traveling and Coding while Traveling</p>
+        <h2 className='hero__title'>About me</h2>
+        <div className='about_section'>
+        <p className='about_me'>Name: Chris</p>
+        <p className='about_me2'>Profession: <span><b>Full Stack Developer</b></span></p>
+        <p className='about_me3'>Hobbies: Coding, Traveling and Coding while Traveling</p>
         </div>
       </section>
-      <section className="hero" id="section-1">
+      <section className='hero' id='section-1'>
         <figure></figure>
-        <h2 className="hero__title_left">Skills</h2>
-        <img className="skill-icons html" src={html} alt=""/>
-        <img className="skill-icons css" src={css} alt=""/>
-        <img className="skill-icons sass"src={sass} alt=""/>
-        <img className="skill-icons bootstrap" src={bootstrap} alt=""/>
-        <img className="skill-icons javascript" src={javascript} alt=""/>
-        <img className="skill-icons react" src={react} alt=""/>
-        <img className="skill-icons redux" src={redux} alt=""/>
-        <img className="skill-icons node" src={node} alt=""/>
-        <img className="skill-icons express" src={express} alt=""/>
-        <img className="skill-icons bcrypt" src={bcrypt} alt=""/>
-        <img className="skill-icons postgresql" src={postgresql} alt=""/>
+        <h2 className='hero__title_left' id='skills'>Skills</h2>
+        <img className='skill-icons' id='html' src={html} alt=''/>
+        <img className='skill-icons css' id='css' src={css} alt=''/>
+        <img className='skill-icons sass' id='sass' src={sass} alt=''/>
+        <img className='skill-icons bootstrap' id='bootstrap' src={bootstrap} alt=''/>
+        <img className='skill-icons javascript' id='javascript' src={javascript} alt=''/>
+        <img className='skill-icons react' id='react' src={react} alt=''/>
+        <img className='skill-icons redux' id='redux' src={redux} alt=''/>
+        <img className='skill-icons node' id='node' src={node} alt=''/>
+        <img className='skill-icons express' id='express' src={express} alt=''/>
+        <img className='skill-icons bcrypt' id='bcrypt' src={bcrypt} alt=''/>
+        <img className='skill-icons postgresql' id='postgresql' src={postgresql} alt=''/>
+
       </section>
-      <section className="hero" id="section-2">
+      <section className='hero' id='section-2'>
         <figure></figure>
-        <h2 className="hero__title">Portfolio</h2>
-        {/* portfolio work here */}
+        <h2 className='hero__title' id='portfolio'>Portfolio</h2>
+        {/* add slider to picture of projects reference old portfolio */}
+        <Card className='card'>
+          <CardImg top width='100%' src={jnjLogin} alt='Card image cap' />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <a href='https://github.com/cbied' target='_blank'><img id="github" src={githubClear} alt='github'/></a>
+            <a href='https://github.com/cbied' target='_blank'><img id="github2" src={githubClear} alt='github'/></a>
+          </CardBody>
+        </Card>
+        <Card className='card2'>
+          <CardImg top width='100%' src={jnjLogin} alt='Card image cap' />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>Some quick example text</CardText>
+            <a href='https://github.com/cbied' target='_blank'><img id="github" src={githubClear} alt='github'/></a>
+            <a href='https://github.com/cbied' target='_blank'><img id="github2" src={githubClear} alt='github'/></a>
+          </CardBody>
+        </Card>
       </section>
-      <section className="hero" id="section-3">
+      <section className='hero' id='section-3'>
         <figure></figure>
-        <h2 className="hero__title_left">Contact Me</h2>
-        <h6 className="email"><a href="mailto:cabiediger@gmail.com">cabiediger@gmail.com</a></h6>
-        <h6 className="phone">410-508-4105</h6>
-        <a href="https://github.com/cbied" target="_blank"><img className="github" src={github} alt="github"/></a>
-        <a href="https://www.linkedin.com/in/biedswebdev/" target="_blank"><img className="linkedIn" src={linkedIn} alt="github"/></a>
+        <h2 className='hero__title_left'>Contact Me</h2>
+        <h6 className='email'><a href='mailto:cabiediger@gmail.com'>cabiediger@gmail.com</a></h6>
+        <h6 className='phone'>410-508-4105</h6>
+        <a href='https://github.com/cbied' target='_blank'><img className='github' src={github} alt='github'/></a>
+        <a href='https://www.linkedin.com/in/biedswebdev/' target='_blank'><img className='linkedIn' src={linkedIn} alt='github'/></a>
       </section>
       {/* 
-      <section className="content">
-        <article className="content__inner">
-          <h1 className="content__title">Some Happy Little Text</h1>
-          <h3 className="content__author">By Bob Ross</h3>
+      <section className='content'>
+        <article className='content__inner'>
+          <h1 className='content__title'>Some Happy Little Text</h1>
+          <h3 className='content__author'>By Bob Ross</h3>
           <p>A thin paint will stick to a thick paint. The shadows are just like the highlights, but we're going in the opposite direction. When you do it your way you can go anywhere you choose.</p>
           <p>You have to make almighty decisions when you're the creator. When you buy that first tube of paint it gives you an artist license. There we go. The little tiny Tim easels will let you down. Let's just drop a little Evergreen right here.</p>
           <p>Trees grow in all kinds of ways. They're not all perfectly straight. Not every limb is perfect. I really believe that if you practice enough you could paint the 'Mona Lisa' with a two-inch brush. Just pretend you are a whisper floating across a mountain. This is your world, whatever makes you happy you can put in it. Go crazy.</p>
