@@ -15,22 +15,31 @@ import postgresql from './assets/skills/postgresql.png'
 import react from './assets/skills/react.png'
 import sass from './assets/skills/sass.png'
 import eye from './assets/eye.png'
-import { Button, Card, CardBody, Collapse, Modal, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap'
+import camera from './assets/camera.png'
+import addHorse from './assets/jnjEquineMassage/addHorse.png'
+import addNewHorse from './assets/jnjEquineMassage/addNewHorse.png'
+import jnjClientSide from './assets/jnjEquineMassage/jnjClientSide.png'
+import jnjClientSide2 from './assets/jnjEquineMassage/jnjClientSide2.png'
+import jnjClientSide3 from './assets/jnjEquineMassage/jnjClientSide3.png'
+import jnjPayment from './assets/jnjEquineMassage/jnjPayment.png'
+import updateProfile from './assets/jnjEquineMassage/updateProfile.png'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap'
 
 function App() {
 
   const [modal, toggle] = useState(false)
-  const [collapse, toggleCollapse] = useState(false)
-
+  const [toggle2, toggleModal] = useState(false)
+  
   return (
     <div>
       <section className='hero' id='section-0'>
         <figure></figure>
-        <h2 className='hero__title'>About me</h2>
+        {/* <h2 className='hero__title'>About me</h2> */}
         <div className='about_section'>
-        <p className='about_me'>Name: Chris</p>
-        <p className='about_me2'>Profession: <span><b>Full Stack Developer</b></span></p>
-        <p className='about_me3'>Hobbies: Coding, Traveling and Coding while Traveling</p>
+        <p className='about_me'>Chris Biediger</p>
+        <p className='about_me2'><b>Full Stack Developer</b></p>
+        <p className='about_me3'>Coding, Traveling</p>
+        <p className='about_me4'>and Coding while Traveling</p>
         </div>
       </section>
       <section className='hero' id='section-1'>
@@ -54,23 +63,42 @@ function App() {
         <h2 className='hero__title' id='portfolio'>Portfolio</h2>
         <Button className='modal2' onClick={toggle}></Button>
         <Modal isOpen={modal} toggle={toggle} className='modal-lg'>
-          <ModalHeader toggle={(bool) => toggle(!bool)}>Jnj Equine Message</ModalHeader>
+          <ModalHeader toggle={() => toggle(!toggle)}>Jnj Equine Message</ModalHeader>
           <ModalBody>
           <h4>Description</h4>
-          <p>JnJ Equine massage is a web app I made for an equine massage company.  This was a test of everything I knew at the time, as well as new technologies I learned on the spot such as Strip and SSH</p>
+          <p className='description'>This is a web app I made for an equine massage company. This was a test of everything I knew at the time, as well as new technologies I learned on the spot such as Strip and SSH</p>
           <div className='technologies'>
-          <h5>Technologies Used</h5>
-          <p>React || SASS || ReactStrap || Redux</p>
-          <p>Node || Express || Bcrypt || PostgreSQL </p>
-          <p>Stripe || SSH || Postman </p>
+          <h5 className='techUsed'>Technologies Used</h5>
+          <p className='tech'>React || SASS || ReactStrap || Redux</p>
+          <p className='tech'>Node || Express || Bcrypt || PostgreSQL </p>
+          <p className='tech'>Stripe || SSH || Postman </p>
           </div>
-          <a href='https://github.com/cbied' target='_blank' className="siteLinks"><img id="github" src={githubClear} alt='github'/> Github</a>
+          <a href='https://github.com/cbied/jnj_equine' target='_blank' className="siteLinks"><img id="github" src={githubClear} alt='github'/> Github</a>
           <a href='https://www.jnjequinemassage.com' target='_blank' className="siteLinks"><img id="github2" src={eye} alt='github'/> Site</a>
+          <span className="siteLinks" onClick={toggleModal}><img id="camera" src={camera} alt='github' />Pics</span>
+              
+            <Modal isOpen={toggle2} toggle={toggleModal}>
+              <ModalHeader toggle={(bool) => toggleModal(!bool)}>Project Pictures</ModalHeader>
+              <ModalBody className='modalPics'>
+                <img src={jnjClientSide} alt="client side one"/>
+                <img src={jnjClientSide2} alt="client side two"/>
+                <img src={jnjClientSide3} alt="client side three"/>
+                <img src={addHorse} alt="add horse"/>
+                <img src={addNewHorse} alt="add new horse"/>
+                <img src={updateProfile} alt="update profile"/>
+                <img src={jnjPayment} alt="payment"/>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="secondary" onClick={(bool) => toggleModal(!bool)}>Done</Button>
+              </ModalFooter>
+            </Modal>
 
           </ModalBody>
+          
           <ModalFooter>
             <Button color="secondary" onClick={(bool) => toggle(!bool)}>Done</Button>
           </ModalFooter>
+          
         </Modal>
 
       {/* add drop down to show pics of project */}
